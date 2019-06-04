@@ -1,0 +1,11 @@
+<div id="poem_ele"></div>
+<div id="info_ele"></div>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var poem = document.querySelector("#poem_ele") // 选取 <div id ="poem_ele">
+    var info = document.querySelector("#info_ele") // 选取 <div id  ="info_ele">
+    poem.innerHTML = result.data.content // poem_ele 的内容为诗词内容
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》' // info_ele 的内容为 【朝代】作者 《诗词名》
+  });
+</script>
